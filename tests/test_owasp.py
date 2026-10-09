@@ -44,3 +44,10 @@ def test_rank_same_severity_groups_by_category():
     access = make(Severity.HIGH, ["CWE-22"])
     ranked = rank(apply_owasp([injection, access]))
     assert ranked[0] is access # A01 comes before A05
+
+def test_cwes_found_in_juice_shop():
+    assert cwe_to_owasp("CWE-548").startswith("A01")
+    assert cwe_to_owasp("CWE-73").startswith("A06")
+    assert cwe_to_owasp("CWE-829").startswith("A08")
+    assert cwe_to_owasp("CWE-346").startswith("A07")
+    assert cwe_to_owasp("CWE-807").startswith("A06")

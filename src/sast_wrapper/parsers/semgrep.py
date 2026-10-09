@@ -6,7 +6,7 @@ from pathlib import Path
 
 from sast_wrapper.models import Finding, Severity
 
-CWE_PATTERN = re.compile(r"CWE-\d+")
+CWE_PATTERN = re.compile(r"CWE-(\d+)", re.IGNORECASE)
 
 
 def _extract_cwes(raw) -> list[str]:
@@ -19,8 +19,10 @@ def _extract_cwes(raw) -> list[str]:
     cwes = []
     for item in raw:
         match = CWE_PATTERN.search(str(item))
-        if match and match.group() not in cwes:
-            cwes.append(match.group())
+        if match :
+            cwe = f"CWE-{match.group(1)}"
+            if cwe not in cwes:
+                cwes.append(cwe)
     return cwes
 
 

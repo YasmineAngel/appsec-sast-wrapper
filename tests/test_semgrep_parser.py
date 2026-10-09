@@ -37,3 +37,7 @@ def test_empty_output():
 
 def test_extract_cwes_removes_duplicates():
     assert _extract_cwes(["CWE-79: one", "CWE-79: two"]) == ["CWE-79"]
+
+def test_lowercase_cwe_is_normalised():
+    assert _extract_cwes("cwe-943") == ["CWE-943"]
+    assert _extract_cwes(["CWE-89: x", "cwe-89"]) == ["CWE-89"]

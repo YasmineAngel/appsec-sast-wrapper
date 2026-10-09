@@ -23,8 +23,8 @@ UNMAPPED = "Unmapped"
 CWE_TO_OWASP = {
     # A01 Broken Access Control (SSRF joined A01 in 2025)
     "CWE-22": "A01", "CWE-23": "A01", "CWE-200": "A01", "CWE-284": "A01",
-    "CWE-285": "A01", "CWE-352": "A01", "CWE-601": "A01", "CWE-639": "A01",
-    "CWE-862": "A01", "CWE-863": "A01", "CWE-918": "A01",
+    "CWE-285": "A01", "CWE-352": "A01", "CWE-548": "A01", "CWE-601": "A01",
+     "CWE-639": "A01", "CWE-862": "A01", "CWE-863": "A01", "CWE-918": "A01",
     # A02 Security Misconfiguration
     "CWE-16": "A02", "CWE-489": "A02", "CWE-611": "A02", "CWE-614": "A02",
     "CWE-942": "A02", "CWE-1004": "A02",
@@ -38,17 +38,18 @@ CWE_TO_OWASP = {
     "CWE-89": "A05", "CWE-94": "A05", "CWE-95": "A05", "CWE-917": "A05",
     "CWE-943": "A05", "CWE-1336": "A05",
     # A06 Insecure Design
-    "CWE-434": "A06",
+    "CWE-73": "A06", "CWE-434": "A06", "CWE-807": "A06",
     # A07 Authentication Failures
-    "CWE-259": "A07", "CWE-287": "A07", "CWE-307": "A07", "CWE-384": "A07",
-    "CWE-521": "A07", "CWE-613": "A07", "CWE-798": "A07",
+    "CWE-259": "A07", "CWE-287": "A07", "CWE-307": "A07", "CWE-346": "A07",
+     "CWE-384": "A07", "CWE-521": "A07", "CWE-613": "A07", "CWE-798": "A07",
     # A08 Software or Data Integrity Failures
-    "CWE-345": "A08", "CWE-353": "A08", "CWE-494": "A08", "CWE-502": "A08",
+    "CWE-345": "A08", "CWE-353": "A08", "CWE-494": "A08", "CWE-502": "A08", "CWE-829": "A08",
     # A09 Security Logging and Alerting Failures
     "CWE-117": "A09", "CWE-223": "A09", "CWE-532": "A09", "CWE-778": "A09",
     # A10 Mishandling of Exceptional Conditions
     "CWE-209": "A10", "CWE-248": "A10", "CWE-390": "A10", "CWE-391": "A10",
     "CWE-703": "A10", "CWE-755": "A10",
+    
 }
 
 
