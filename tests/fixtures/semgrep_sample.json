@@ -1,0 +1,36 @@
+{
+  "results": [
+    {
+      "check_id": "javascript.sequelize.security.audit.sequelize-injection-express",
+      "path": "routes/login.ts",
+      "start": {"line": 34, "col": 5},
+      "end": {"line": 34, "col": 80},
+      "extra": {
+        "message": "Detected a sequelize statement that is tainted by user input.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": ["CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"]
+        }
+      }
+    },
+    {
+      "check_id": "generic.secrets.security.detected-generic-secret",
+      "path": "lib/insecurity.ts",
+      "start": {"line": 23, "col": 1},
+      "end": {"line": 23, "col": 40},
+      "extra": {
+        "message": "Generic secret detected",
+        "severity": "WARNING",
+        "metadata": {"cwe": "CWE-798: Use of Hard-coded Credentials"}
+      }
+    },
+    {
+      "check_id": "example.info.rule",
+      "path": "frontend/src/app/app.component.ts",
+      "start": {"line": 5, "col": 1},
+      "end": {"line": 5, "col": 10},
+      "extra": {"message": "Informational note", "severity": "INFO"}
+    }
+  ],
+  "errors": []
+}
