@@ -9,7 +9,7 @@ from pathlib import Path
 from sast_wrapper.models import Finding
 
 DEFAULT_SEMGREP_CONFIGS = ["p/owasp-top-ten", "p/secrets"]
-DEFAULT_EXCLUDES = [".venv", "venv", "node_modules", ".git"]
+DEFAULT_EXCLUDES = [".venv", "venv", "node_modules", ".git", "__pycache__"]
 
 
 class ScanError(Exception):
@@ -69,3 +69,10 @@ def relative_paths(findings: list[Finding], base) -> list[Finding]:
             except ValueError:
                 pass  # not inside base: leave it as it is
     return findings
+
+def count_scanned(tool: str, data: dict) -> int:
+    """How many files did the scanner actually look at?"""
+    if tool == "semgrep":
+        return len(data.get("paths", {}).get("scanned", []))
+    # Bandit: one entry per file in "metrics", plus a "_totals" entry
+    return len([name for name in data.get("metrics", {}) if name != "_totals"])
