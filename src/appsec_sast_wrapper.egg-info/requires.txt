@@ -1,0 +1,4 @@
+
+[dev]
+pytest>=8
+bandit>=1.7

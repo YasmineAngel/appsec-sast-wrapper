@@ -1,0 +1,2 @@
+[console_scripts]
+sast-wrapper = sast_wrapper.cli:main
